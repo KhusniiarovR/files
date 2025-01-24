@@ -1,0 +1,13 @@
+    Vector2 circle_1 = { 0, 0};
+    Vector2 circle_2 = { MAP_WIDTH, MAP_HEIGHT};
+
+    Vector2 start = circle_1;
+    Vector2 end = circle_2;
+    for (int i = 0; i < step * 2; i++) {
+        Vector2 dir = {(circle_2.x - start.x) / step, (circle_2.y - start.y) / step};
+        start.x += dir.x + GetRandomValue(-50, 50)/10;
+        start.y += dir.y + GetRandomValue(-50, 50)/10;
+        DrawLineEx(start_2, start, 4, BLUE);
+        start_2 = start;
+    }
+    DrawLineEx(start_2, circle_2, 4, BLUE);
